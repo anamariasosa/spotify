@@ -3,8 +3,10 @@ html
   head
     include ./views/includes/head.jade
   body
-    .container
-      form.form-search
+    .container.songs-container
+      form.form-search(action="/")
         h2.form-search-heading Spotify Preview
-        input(type="search" id="inputSong" class="form-control" placeholder="Escribe una canción o artista" required autofocus)
+        input(type="search" id="inputSong" class="form-control" placeholder="Escribe una canción o artista" required autofocus)  
+      #songs_container
+    include ./views/layouts/songs.jade
     include ./views/includes/scripts.jade
