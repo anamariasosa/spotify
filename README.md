@@ -1,4 +1,6 @@
 ## Spotify
+![home](https://raw.githubusercontent.com/anamariasosa/spotify/master/screenshots/home.png)
+
 To run this project
 
 ```cd spotify```
