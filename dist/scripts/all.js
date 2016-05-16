@@ -1,7 +1,7 @@
 function showSongs(song) {
 	var source   =	$('#songs-template').html();
 	var template = Handlebars.compile(source);
-	
+	$('#error').addClass('hidden')
 	$.ajax({
 		url: 'https://api.spotify.com/v1/search',
 		data: {
@@ -20,8 +20,15 @@ function showSongs(song) {
 			$('.song_item-text').addClass('zoomIn');
 			$('.song_audio').addClass('zoomIn');
 		}, 1000);
+		validation();
 	})
 
+}
+
+function validation() {
+	if ($('.song_item-title').text() == "") {
+		$('#error').removeClass('hidden').addClass('fadeIn')
+	}
 }
 jQuery(document).ready(function($) {
 	$('.form-search').on('submit', function(e) {
