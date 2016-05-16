@@ -6,15 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="components/animate.css/animate.min.css">
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
-    <div class="container">
-      <form class="form-search">
+    <div class="container song-container">
+      <form action="/" class="form-search">
         <h2 class="form-search-heading">Spotify Preview</h2>
         <input type="search" id="inputSong" placeholder="Escribe una canción o artista" required autofocus class="form-control">
       </form>
+      <div id="songs_container"></div>
     </div>
+    <script id="songs-template" type="text/x-handlebars-template">
+      {{#each tracks.items}}
+        <div class="row song hidden">
+          <img src="{{this.album.images.0.url}}" class="song_image animated col-sm-3 col-xs-3">
+          <div class="col-sm-6 col-xs-6 song_item">
+            <h4 class="song_item-title animated">{{this.name}}</h4> 
+            <p class="song_item-text animated">{{this.artists.0.name}}</p> 
+            <audio controls class="song_audio animated">
+              <source src="{{this.preview_url}}" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+        </div> 
+      {{/each}}
+    </script>
+    <script src="components/handlebars/handlebars.js"></script>
     <script src="components/jquery/dist/jquery.min.js"></script>
     <script src="scripts/all.js"></script>
   </body>
