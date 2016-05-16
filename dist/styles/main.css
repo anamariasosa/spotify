@@ -1,0 +1,35 @@
+/* line 3, app/sass/main.scss */
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f2;
+}
+
+/* line 9, app/sass/main.scss */
+.form-search {
+  background-color: #fff;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+/* line 16, app/sass/main.scss */
+.form-search .form-search-heading {
+  margin-bottom: 10px;
+}
+
+/* line 20, app/sass/main.scss */
+.form-search .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* line 29, app/sass/main.scss */
+.form-search .form-control:focus {
+  z-index: 2;
+}

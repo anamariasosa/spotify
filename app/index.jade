@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    include ./views/includes/head.jade
+  body
+    .container
+      form.form-search
+        h2.form-search-heading Spotify Preview
+        input(type="search" id="inputSong" class="form-control" placeholder="Escribe una canción o artista" required autofocus)
+    include ./views/includes/scripts.jade
